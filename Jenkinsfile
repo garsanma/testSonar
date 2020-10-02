@@ -3,7 +3,7 @@ def server_up = false
 pipeline {
 //agent any
     agent { label "sdk5" }
-  
+    stages {
 	 stage('Sonarqube') {
     		environment {
         	scannerHome = tool 'SonarQubeScanner'
@@ -14,4 +14,7 @@ pipeline {
        	    	}
            }
    	 }
+	 }
+
+
 }  
